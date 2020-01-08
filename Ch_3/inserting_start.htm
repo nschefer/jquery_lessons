@@ -6,7 +6,16 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function () {
+            // $("#example p").append("with some content appended");
+            // $("#example p").prepend("hello");
+            // $("#example p:last").appendTo("#example p:first");
+            // $("#example p:last").prependTo("#example p:first");
+            // $("#example p").after("--");
+            // $("#example p").before("**");
+            $("<p>New para after</p>").insertAfter("#example p:first");
+            $("<p>New para before</p>").insertBefore("#example p:last");
+
         });
     </script>
 </head>
@@ -15,21 +24,27 @@
     <h1>Inserting Document Content</h1>
     <div id="content">
 
-        <p>Content can be inserted at various points in the document, relative to existing content, using a variety of jQuery
+        <p>Content can be inserted at various points in the document, relative to existing content, using a variety of
+            jQuery
             methods built for each purpose.</p>
-        <p>There are two sets of insertion functions: one set for inserting content inside of other content, and one for inserting
+        <p>There are two sets of insertion functions: one set for inserting content inside of other content, and one for
+            inserting
             outside of other content.</p>
         <ul id="list1">
             <li class="a"><code>append()</code>: Appends content to the inside of the matched elements</li>
             <li class="a"><code>prepend()</code>: Prepends content to the inside of the matched elements</li>
-            <li class="a"><code>appendTo()</code>: Appends the specified content to the inside of the matched elements</li>
-            <li class="a"><code>prependTo()</code>: Prepends the specified content to the inside of the matched elements</li>
+            <li class="a"><code>appendTo()</code>: Appends the specified content to the inside of the matched elements
+            </li>
+            <li class="a"><code>prependTo()</code>: Prepends the specified content to the inside of the matched elements
+            </li>
         </ul>
         <ul>
             <li class="a"><code>after()</code>: Appends content to the outside of the matched elements</li>
             <li class="a"><code>before()</code>: Prepends content to the outside of the matched elements</li>
-            <li class="a"><code>insertAfter()</code>: Takes the specified content and appends it outside of the specified elements</li>
-            <li class="a"><code>insertBefore()</code>: Takes the specified content and prepends it outside of the specified elements</li>
+            <li class="a"><code>insertAfter()</code>: Takes the specified content and appends it outside of the
+                specified elements</li>
+            <li class="a"><code>insertBefore()</code>: Takes the specified content and prepends it outside of the
+                specified elements</li>
         </ul>
         <div id="example">
             <p class="a">This is paragraph 1</p>

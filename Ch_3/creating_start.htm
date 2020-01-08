@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function () {
+            // alert($("#example").html());
             document.getElementById("create").addEventListener("click", function (evt) {
                 createContent();
             });
@@ -19,12 +20,16 @@
         });
 
         function createContent() {
+            $("#example").html("<p>Hi There</p>");
         }
 
         function changeContent() {
+            const newItem = $("<p>This is a new paragraph</p>");
+            $("#para1").html(newItem)
         }
 
         function changeAllTheContent() {
+            $("#example p").text("I've changed all the paragraphs!")
         }
     </script>
 </head>
@@ -33,7 +38,8 @@
     <h1>Creating new document content</h1>
     <div id="content">
 
-        <p>jQuery makes the creation and manipulation of document content very easy. Rather than having to directly use the verbose DOM methods, you can roll several operations into just a few function calls.</p>
+        <p>jQuery makes the creation and manipulation of document content very easy. Rather than having to directly use
+            the verbose DOM methods, you can roll several operations into just a few function calls.</p>
         <ul id="list1">
             <li><code>html(<i>str</i>)</code>: can be used to retrieve or set the HTML content of an element</li>
             <li><code>text(<i>str</i>)</code>: used to retrieve or set the text content of an element</li>
