@@ -6,7 +6,11 @@
     <link rel="stylesheet" type="text/css" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function () {
+            // $("p[class]").css("border", "3px solid red");
+            // $("p[id=para1]").css("border", "3px solid red");
+            // $("p[id^=para]").css("border", "3px solid red");
+            $("p[id^=para][lang*=en-]").css("border", "3px solid red");
         });
     </script>
 </head>
@@ -15,7 +19,8 @@
     <h1>Using Attribute Filters</h1>
     <div id="content">
 
-        <p>Attribute filters are used to select elements in the Web page that have attribute values matching a given set of
+        <p>Attribute filters are used to select elements in the Web page that have attribute values matching a given set
+            of
             criteria.</p>
         <p>Some examples include:</p>
         <ul id="list1">

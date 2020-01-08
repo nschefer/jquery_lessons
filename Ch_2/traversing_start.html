@@ -6,7 +6,22 @@
     <link rel="stylesheet" type="text/css" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function () {
+            // $("#example").children().css("border", "3px red solid");
+            // const elem = $("#para1");
+            // elem.prev().css("border", "3px red solid");
+            // elem.next().css("border", "3px green solid");
+            // elem.parentsUntil($("body")).css("border", "3px blue solid");
+            // $("#example").find("#para4").css("border", "3px red solid");
+            let leftmargin = 0;
+            let border = 3;
+
+            $("#example p").each(function (idx, el) {
+                $(el).css("border", border + "px solid red")
+                    .css("margin-left", leftmargin);
+                border += 2;
+                leftmargin += 10;
+            })
         });
     </script>
 </head>
@@ -14,15 +29,20 @@
 <body>
     <h1>Using jQuery Document Traversal Features</h1>
     <div id="content">
-        <p>The DOM of a Web page is organized as a tree structure. The elements in the page have family-like names to refer
+        <p>The DOM of a Web page is organized as a tree structure. The elements in the page have family-like names to
+            refer
             to their positions relative to other elements.</p>
-        <p>For example, the HEAD and BODY tags are "children" of the HTML tag, and are "siblings" of each other. They have the
-            HTML tag as their "parent". jQuery provides functions for navigating the document tree and processing sets of
+        <p>For example, the HEAD and BODY tags are "children" of the HTML tag, and are "siblings" of each other. They
+            have the
+            HTML tag as their "parent". jQuery provides functions for navigating the document tree and processing sets
+            of
             elements, such as:</p>
         <ul id="list1">
-            <li><code>children()</code>: Retrieves all the child elements of the matched elements, except text nodes</li>
+            <li><code>children()</code>: Retrieves all the child elements of the matched elements, except text nodes
+            </li>
             <li><code>prev(), next(), parent()</code>: used to traverse the family relationships of an element</li>
-            <li><code>find()</code>: search within a given element to find elements that match a selector expression</li>
+            <li><code>find()</code>: search within a given element to find elements that match a selector expression
+            </li>
             <li><code>each()</code>: loops over a set of matched elements and calls a function for each one</li>
         </ul>
         <div id="example">
