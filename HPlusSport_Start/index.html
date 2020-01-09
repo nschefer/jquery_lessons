@@ -43,6 +43,15 @@
         $(".product-item").has(dataVal).css("display", checked ? "" : "none");
       }
 
+      $(".product-item").each(function () {
+        const prodName = encodeURIComponent($(this).children("h2").text());
+        const prodID = encodeURIComponent($(this).data("prod_id"));
+
+        const link = $(`<a href="product.html?prodName=${prodName}&prodID=${prodID}"/>`)
+
+        $(this).children("img").wrap(link);
+      })
+
 
     })
   </script>
