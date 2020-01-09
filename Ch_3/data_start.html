@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script>
-        $("document").ready(function() {
+        $("document").ready(function () {
             document.getElementById("show").addEventListener("click", function (evt) {
+                alert(JSON.stringify($("#example").data(), null, "  "));
             });
             document.getElementById("store").addEventListener("click", function (evt) {
+                $("#example").data("key1", 1234);
+                $("#example").data("key2", "Noah");
             });
             document.getElementById("remove").addEventListener("click", function (evt) {
+                $("#example").removeData("key2");
             });
         });
     </script>
@@ -21,7 +25,8 @@
     <h1>Using the Data Methods</h1>
     <div id="content">
 
-        <p>jQuery can associate arbitrary data with page elements. Use the controls below to exercise the data() and removeData()
+        <p>jQuery can associate arbitrary data with page elements. Use the controls below to exercise the data() and
+            removeData()
             functions on the example DIV element</p>
         <div id="example" data-key3="data attribute">
             <p class="a">This is paragraph 1</p>

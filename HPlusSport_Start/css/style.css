@@ -557,5 +557,8 @@ em {
     }
 }
 
+.hide {
+    display: none;
+}
 
 /*.people*/
