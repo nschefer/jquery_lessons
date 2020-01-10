@@ -9,8 +9,26 @@
   <script src="../jquery-3.0.0.js"></script>
   <script>
     $(function () {
+
       const paramObj = getUrlParams();
       $("#productName").text(paramObj.prodName);
+
+      $.ajax({
+        type: "GET",
+        url: "product-data.json",
+        dataType: "json",
+        success: function (response) {
+          const products = response.products;
+          for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            if (product.prod_name === paramObj.prodName) {
+              $("#productStock").text(product.in_stock ? "Yes!" : "No");
+              $("#productPrice").text(product.retail_price);
+              $("#productDesc").text(product.description);
+            }
+          }
+        }
+      });
     })
 
     function getUrlParams() {
