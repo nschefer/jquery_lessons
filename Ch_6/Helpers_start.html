@@ -13,11 +13,13 @@
 
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function () {
             getData();
         });
-        
+
         function getData() {
+            // $.get("testdata.txt", successFn, "text");
+            $("#ajaxContent").load("testdata.html")
         }
 
         function successFn(result) {
@@ -34,7 +36,8 @@
     <h1>The Ajax Helper Functions</h1>
     <div id="content">
 
-        <p>It turns out that certain scenarios, such as retrieving data via AJAX and then inserting the returned content into
+        <p>It turns out that certain scenarios, such as retrieving data via AJAX and then inserting the returned content
+            into
             an element on the page, are pretty common in Web development.</p>
         <p>jQuery provides a set of helper functions that make these scenarios easier.</p>
         <p>Content will be inserted into this div:</p>

@@ -13,21 +13,31 @@
 
   <script type="text/javascript" src="../jquery-3.0.0.js"></script>
   <script type="text/javascript">
-    $("document").ready(function() {
-        getData();
+    $("document").ready(function () {
+      getData();
+    });
+
+    function getData() {
+      $.ajax({
+        type: "GET",
+        url: "testdata.txt",
+        dataType: "text",
+        success: successFn,
+        error: errorFn,
+        complete: function (xhr, status) {
+          console.log("the request is complete")
+        }
       });
-      
-      function getData() {
-      }
-      
-      function successFn(result) {
-        console.log("Setting result");
-        $("#ajaxContent").append(result);
-      }
-      
-      function errorFn(xhr, status, strErr) {
-        console.log("There was an error!");
-      }
+    }
+
+    function successFn(result) {
+      console.log("Setting result");
+      $("#ajaxContent").append(result);
+    }
+
+    function errorFn(xhr, status, strErr) {
+      console.log("There was an error!");
+    }
   </script>
 </head>
 
@@ -35,7 +45,8 @@
   <h1>Using the basic Ajax function</h1>
   <div id="content">
 
-    <p>The <code>$.ajax()</code> function is used to perform basic AJAX requests. It can be customized using a variety of parameters.</p>
+    <p>The <code>$.ajax()</code> function is used to perform basic AJAX requests. It can be customized using a variety
+      of parameters.</p>
     <p>If successful, the returned data will appear here:</p>
     <p id="ajaxContent"></p>
   </div>

@@ -13,14 +13,36 @@
 
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $("document").ready(function() {
+        $("document").ready(function () {
+            $(document).ajaxStart(function () {
+                console.log("AJAX starting")
+            })
+            $(document).ajaxStop(function () {
+                console.log("AJAX request ended")
+            })
+            $(document).ajaxSend(function (evt, jqXHR, options) {
+                console.log(jqXHR)
+                console.log("About to send request for data");
+            })
+            $(document).ajaxError(function (evt, jqXHR, settings, err) {
+                console.log(jqXHR)
+                console.log("Hmm, something went wrong: " + err);
+            })
+            $(document).ajaxSuccess(function (evt, jqXHR, options) {
+                console.log(jqXHR)
+                console.log("Looks like everything worked");
+            })
+            $(document).ajaxComplete(function (evt, jqXHR, options) {
+                console.log(jqXHR)
+                console.log("Everything's finished")
+            })
             getData();
         });
-      
+
         function getData() {
             $.get("testdata.txt", successFn);
         }
-        
+
         function successFn(result) {
             console.log("Setting result");
             $("#ajaxContent").append(result);
