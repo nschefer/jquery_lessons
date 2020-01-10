@@ -6,25 +6,37 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $("#fadein").click(function() {
+        $(function () {
+            $("#fadein").click(function () {
+                $("#theDiv").fadeIn();
             });
-            $("#fadeout").click(function() {
+            $("#fadeout").click(function () {
+                $("#theDiv").fadeOut();
             });
-            $("#fadeto3").click(function() {
+            $("#fadeto3").click(function () {
+                $("#theDiv").fadeTo("slow", .3);
             });
-            $("#fadeup").click(function() {
+            $("#fadeup").click(function () {
+                $("#theDiv").fadeTo("slow", 1);
             });
-            $("#pulse").click(function() {
+            $("#pulse").click(function () {
+                $("#theDiv").fadeTo(200, 0.3)
+                    .fadeTo(200, 1)
+                    .fadeTo(200, .3)
+                    .fadeTo(200, 1, onComplete);
             });
         });
+
+        function onComplete() {
+            $(this).text("Animation Complete")
+        }
     </script>
     <style type="text/css">
         p,
         span {
             font-size: 16pt;
         }
-        
+
         button {
             margin: 5pt 5pt 0 0;
         }

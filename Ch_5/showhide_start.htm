@@ -6,13 +6,21 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $("#show").click(function() {
+        $(function () {
+            $("#show").click(function () {
+                $("#theDiv").show(5000);
             });
-            $("#hide").click(function() {
+            $("#hide").click(function () {
+                $("#theDiv").hide("slow", "swing");
             });
-            $("#toggle").click(function() {
+            $("#toggle").click(function () {
+                $("#theDiv").toggle("slow", completion);
             });
+
+            function completion() {
+                $(this).text("Animation Complete");
+            }
+
         });
     </script>
     <style type="text/css">
@@ -20,7 +28,7 @@
         span {
             font-size: 16pt;
         }
-        
+
         button {
             margin: 5pt 5pt 0 0;
         }
@@ -31,12 +39,14 @@
     <h1>Using the show and hide effects</h1>
     <div id="content">
 
-        <p>The show() and hide() functions are the simplest way to reveal and hide elements. This can be done with an optional
+        <p>The show() and hide() functions are the simplest way to reveal and hide elements. This can be done with an
+            optional
             animation.</p>
         <ul>
             <li><code>show()</code>: Reveals the matched elements using an optional animation</li>
             <li><code>hide()</code>: Hides the matched elements using an optional animation</li>
-            <li><code>toggle()</code>: Toggles the visible state of the matched elements using an optional animation</li>
+            <li><code>toggle()</code>: Toggles the visible state of the matched elements using an optional animation
+            </li>
         </ul>
         <div id="theDiv" class="box">
         </div>
