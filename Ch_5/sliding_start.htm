@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $(function() {
-            $("#slideup").click(function() {
+        $(function () {
+            $("#slideup").click(function () {
+                $("#theDiv").slideUp();
             });
-            $("#slidedown").click(function() {
+            $("#slidedown").click(function () {
+                $("#theDiv").slideDown();
             });
-            $("#toggle").click(function() {
+            $("#toggle").click(function () {
+                $("#theDiv").slideToggle();
             });
         });
     </script>
@@ -25,12 +28,12 @@
             border: 1px solid gray;
             cursor: pointer;
         }
-        
+
         p,
         span {
             font-size: 16pt;
         }
-        
+
         button {
             margin: 5pt 5pt 0 0;
         }
@@ -41,14 +44,18 @@
     <h1>Using the slide functions</h1>
     <div id="content">
 
-        <p>Elements can also be shown and revealed via the slide functions. A common use case for this feature is when, for
+        <p>Elements can also be shown and revealed via the slide functions. A common use case for this feature is when,
+            for
             example, you have a message to display to the user that can be dismissed once read.</p>
         <ul>
-            <li><code>slideUp()</code>: animates the height of the matched elements to 0 (or whatever CSS min-height is set to).
-                When the animation finishes, the <code>display</code> CSS property of the element is set to 'none' to remove
+            <li><code>slideUp()</code>: animates the height of the matched elements to 0 (or whatever CSS min-height is
+                set to).
+                When the animation finishes, the <code>display</code> CSS property of the element is set to 'none' to
+                remove
                 the element from the page layout</li>
             <li><code>slideDown()</code>: animates the height of the matched elements to reveal them</li>
-            <li><code>slideToggle()</code>: toggles the state of the matched elements, either sliding them up or down depending
+            <li><code>slideToggle()</code>: toggles the state of the matched elements, either sliding them up or down
+                depending
                 on their current state</li>
         </ul>
         <div id="theDiv">
